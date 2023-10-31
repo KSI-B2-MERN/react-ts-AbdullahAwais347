@@ -1,0 +1,4 @@
+  {/* <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/navbar" element={<NavBar />}></Route>
+      </Routes> */}

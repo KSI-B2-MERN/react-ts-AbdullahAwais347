@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 
 const roleOptions = [
@@ -34,8 +34,8 @@ function SignUp() {
   const onRoleChange = (role: string) => {
     setRole(role);
   };
-  const SignUp = async () => {
-    const loginRes = await axios.post("http://localhost:3000/auth/signup", {
+  const signUp = async () => {
+    const loginRes = await axios.post("http://localhost:3000/auth/signUp", {
       fName: fName,
       lName: lName,
       username: username,
@@ -102,7 +102,12 @@ function SignUp() {
                     void onRoleChange(e?.value || "");
                   }}
                 />
-                <button className=" bg-gray-400  mt-6 m-auto w-32 p-1 rounded-md text-black">
+                <button
+                  className=" bg-gray-400  mt-6 m-auto w-32 p-1 rounded-md text-black"
+                  onClick={() => {
+                    void signUp();
+                  }}
+                >
                   Sign Up
                 </button>
                 <label className="m-auto mt-2">Or</label>
