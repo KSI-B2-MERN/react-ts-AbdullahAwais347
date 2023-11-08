@@ -4,13 +4,18 @@ import axios from "axios";
 import { useState } from "react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "./Component/Dashboard/navBar";
-import SignUp from "./Component/Login-SignUp";
+import SignUp from "./Component/sign-up";
+import LogIn from "./Component/login";
+import Home from "./Component/Home";
 
 function App() {
   return (
     <>
-      <SignUp />
+      <Routes>
+        {/* <Route path="/" element={<LogIn />}></Route> */}
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/signUp" element={<SignUp />}></Route>
+      </Routes>
     </>
   );
 }
